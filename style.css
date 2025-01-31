@@ -36,7 +36,12 @@ form .btn-enviar input:hover {
 
 /* ESTILO DO CABEÇALHO */
 header {
-    padding: 40px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;  /* Garantir que o topo da página fique acima de outros conteúdos */
+    background-color: #000;  /* Certifique-se de que o fundo seja opaco para evitar transparência */
 }
 
 header>.interface {
@@ -80,11 +85,10 @@ header nav.menu-desktop ul li {
 }
 
 /* ESTILO DO MENU MOBILE */
-.btn-abrir-menu i {
-    color: #00ff08;
-    font-size: 40px;
-    cursor:pointer;
+.btn-abrir-menu {
+    display: none;
 }
+
 
 .menu-mobile {
     background-color: #000000;
@@ -157,7 +161,8 @@ header nav.menu-desktop ul li {
 
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
-    padding: 40px 4%;
+    padding: 120px 4% 40px;  /* Ajuste o padding superior para não sobrepor o cabeçalho */
+    
 }
 
 section.topo-do-site .flex {
@@ -168,7 +173,7 @@ section.topo-do-site .flex {
 
 .topo-do-site h1 {
     color: #fff;
-    font-size: 42px;
+    font-size: 56px;
     line-height: 40px;
 }
 
