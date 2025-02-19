@@ -1,31 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Menu mobile
-  let btnMenu = document.getElementById('btn-abrir-menu');
-  let menu = document.getElementById('menu-mobile');
-  let overlay = document.getElementById('overlay-menu');
-  let btnFechar = document.querySelector('.btn-fechar i');
-
-  btnMenu.addEventListener('click', () => {
-    menu.classList.add('abrir-menu');
-    overlay.style.display = 'block';
-  });
-
-  btnFechar.addEventListener('click', () => {
-    menu.classList.remove('abrir-menu');
-    overlay.style.display = 'none';
-  });
-
-  overlay.addEventListener('click', () => {
-    menu.classList.remove('abrir-menu');
-    overlay.style.display = 'none';
-  });
-
-  menu.querySelectorAll('a').forEach(item => {
-    item.addEventListener('click', () => {
-      menu.classList.remove('abrir-menu');
-      overlay.style.display = 'none';
-    });
-  });
+ 
 
   // Projetos do GitHub
   async function getprojects() {
