@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", async function () {
     const username = "jacksonmoura10";
     const projetosContainer = document.getElementById("projetos");
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         },
         "WE-CARE": {
             link: "https://jacksonmoura10.github.io/WE-CARE/",
-            imagem: "assets/we-care.png" // Corrigido o espaço no nome da imagem
+            imagem: "assets/we-care.png"
         },
         "sorteador": {
             link: "https://jacksonmoura10.github.io/sorteador/",
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             link: "https://jacksonmoura10.github.io/irmaos-mario/",
             imagem: "assets/mario.png"
         },
-
     };
 
     try {
@@ -53,13 +51,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         projetosContainer.innerHTML = ""; // Limpa antes de adicionar os projetos
 
         repos.forEach(repo => {
+            // Ignora o repositório do portfólio
+            if (repo.name === "portfolio") return;
+
             // Capitalizando a primeira letra de cada palavra
             const nomeProjeto = repo.name
                 .split("-")
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(" ");
 
-            const projetoInfo = sitesPublicados[repo.name] || { link: repo.html_url, imagem: "assets/default.png" };
+            const projetoInfo = sitesPublicados[repo.name] || {
+                link: repo.html_url,
+                imagem: "assets/default.png"
+            };
 
             const card = document.createElement("div");
             card.classList.add("projeto");
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         projetosContainer.innerHTML = "<p>Erro ao carregar projetos.</p>";
         console.error(error);
     }
-
 });
+
 
 
