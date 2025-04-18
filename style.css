@@ -65,18 +65,83 @@ header ul li a {
     border-radius: 10px;
     font-weight: bold;
     transition: all 0.3s ease;
-
 }
-
-
-
-
+.btn-download {
+    position: fixed;
+    top: 20px;
+    bottom: 40px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background-color: #043be2;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 86, 255, 0.4);
+    border: 1px solid rgba(0, 86, 255, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-download:hover {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px #0056ff, 0 0 25px #0056ff;
+  }
+  
+  /* Ícone */
+  .btn-download svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+  }
+  
+  /* Tooltip */
+  .btn-download::after {
+    content: 'Baixar Currículo';
+    position: absolute;
+    bottom: -35px;
+    background-color: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+  
+  .btn-download:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .astronauta {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Reutilizável para qualquer flutuação */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  
 
 ul li a:hover {
     background-color: #041399fc;
-    /* Cor do botão ao passar o mouse */
     transform: scale(1.1);
-    /* Aumenta o tamanho do botão */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
    
 }
