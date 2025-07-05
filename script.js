@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Mapeando os projetos com suas imagens correspondentes
     const sitesPublicados = {
+        "Cadastro-de-usuarios": {
+            link: "https://cadastro-de-usuarios-chi-one.vercel.app/",
+            imagem: "assets/cadastro.png"
+        },
         "calculadora": {
             link: "https://jacksonmoura10.github.io/calculadora/",
             imagem: "assets/calculadora.png"
@@ -39,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         "irmaos-mario": {
             link: "https://jacksonmoura10.github.io/irmaos-mario/",
             imagem: "assets/mario.png"
-        },
+        }
     };
 
     try {
@@ -50,9 +54,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         projetosContainer.innerHTML = ""; // Limpa antes de adicionar os projetos
 
+        const projetosIgnorados = ["portfolio", "deveclubnod"];
+
         repos.forEach(repo => {
-            // Ignora o repositório do portfólio
-            if (repo.name === "portfolio") return;
+              console.log(repo.name); 
+            if (projetosIgnorados.includes(repo.name)) return;
 
             // Capitalizando a primeira letra de cada palavra
             const nomeProjeto = repo.name
